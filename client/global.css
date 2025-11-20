@@ -7,57 +7,57 @@
 
 @layer base {
   /**
-   * Kid-friendly color palette with soft pastels
-   * Warm, inviting, and accessible colors
+   * Professional, modern color palette
+   * Sophisticated yet accessible for all ages
   */
   :root {
-    /* Soft cream background with warm undertones */
-    --background: 48 100% 96%;
-    --foreground: 260 20% 25%;
+    /* Clean, minimal background */
+    --background: 0 0% 99%;
+    --foreground: 220 13% 20%;
 
-    /* Soft white cards with subtle warmth */
+    /* Pure white cards */
     --card: 0 0% 100%;
-    --card-foreground: 260 20% 25%;
+    --card-foreground: 220 13% 20%;
 
     /* Popover styling */
     --popover: 0 0% 100%;
-    --popover-foreground: 260 20% 25%;
+    --popover-foreground: 220 13% 20%;
 
-    /* Warm coral/peachy primary color - friendly and engaging */
-    --primary: 15 100% 65%;
+    /* Modern indigo primary - professional and trustworthy */
+    --primary: 217 92% 54%;
     --primary-foreground: 0 0% 100%;
 
-    /* Soft mint secondary - calming and child-friendly */
-    --secondary: 160 70% 70%;
-    --secondary-foreground: 260 20% 25%;
+    /* Teal secondary - complementary and calm */
+    --secondary: 180 60% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Soft muted for disabled states */
-    --muted: 210 20% 85%;
-    --muted-foreground: 215 15% 55%;
+    /* Muted for disabled states */
+    --muted: 215 14% 89%;
+    --muted-foreground: 215 10% 55%;
 
-    /* Soft purple accent - playful and creative */
-    --accent: 275 75% 70%;
+    /* Amber accent - for highlights and CTAs */
+    --accent: 38 92% 50%;
     --accent-foreground: 0 0% 100%;
 
-    /* Borders in soft gray */
+    /* Professional borders */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 88%;
-    --input: 210 15% 90%;
-    --ring: 15 100% 65%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 92% 54%;
 
-    --radius: 1.25rem;
+    --radius: 1rem;
 
-    /* Sidebar with soft background */
-    --sidebar-background: 240 20% 97%;
-    --sidebar-foreground: 260 20% 25%;
-    --sidebar-primary: 15 100% 65%;
+    /* Sidebar */
+    --sidebar-background: 220 13% 97%;
+    --sidebar-foreground: 220 13% 20%;
+    --sidebar-primary: 217 92% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 70% 70%;
-    --sidebar-accent-foreground: 260 20% 25%;
-    --sidebar-border: 210 15% 88%;
-    --sidebar-ring: 15 100% 65%;
+    --sidebar-accent: 180 60% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 92% 54%;
   }
 
   .dark {
