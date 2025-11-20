@@ -1,4 +1,4 @@
-import { Menu, ChevronRight, Star, BookOpen, Flame, Award, TrendingUp, Play } from "lucide-react";
+import { Menu, ChevronRight, Star, BookOpen, TrendingUp, Award, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -73,44 +73,49 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-100 via-orange-50 to-pink-100 pb-20">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
-            Bookworm
-          </h1>
+      <div className="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
+        <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-foreground">Bookworm</h1>
+            <p className="text-xs text-gray-500">Welcome back, parent</p>
+          </div>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors btn-icon"
           >
-            <Menu className="w-6 h-6 text-gray-700" />
+            <Menu className="w-6 h-6 text-foreground" />
           </button>
         </div>
         {menuOpen && (
-          <div className="px-6 pb-4 space-y-2 border-t border-gray-200">
+          <div className="px-6 pb-4 space-y-1 border-t border-border">
             <Link
               to="/search"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-foreground hover:bg-gray-50 rounded-lg transition-colors"
             >
+              <BookOpen className="w-4 h-4" />
               Search Books
             </Link>
             <Link
               to="/library"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-foreground hover:bg-gray-50 rounded-lg transition-colors"
             >
+              <BookOpen className="w-4 h-4" />
               My Library
             </Link>
             <Link
               to="/progress"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-foreground hover:bg-gray-50 rounded-lg transition-colors"
             >
+              <TrendingUp className="w-4 h-4" />
               Progress
             </Link>
             <Link
               to="/settings"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-foreground hover:bg-gray-50 rounded-lg transition-colors"
             >
+              <Menu className="w-4 h-4" />
               Settings
             </Link>
           </div>
@@ -118,78 +123,74 @@ export default function Dashboard() {
       </div>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-6 py-6 space-y-8">
+      <div className="max-w-2xl mx-auto px-6 py-8 space-y-8">
         {/* Child Selector */}
-        <div>
-          <h2 className="text-lg font-bold text-gray-800 mb-3">Select Child</h2>
+        <div className="animate-slide-up">
+          <h2 className="heading-md text-foreground mb-4">Select Child</h2>
           <div className="flex gap-3 overflow-x-auto pb-2">
-            {children.map((child) => (
+            {children.map((child, idx) => (
               <button
                 key={child.id}
                 onClick={() => setSelectedChild(child.name)}
-                className={`flex-shrink-0 px-4 py-3 rounded-2xl font-semibold transition-all ${
+                style={{ animationDelay: `${idx * 100}ms` }}
+                className={`flex-shrink-0 px-4 py-3 rounded-lg font-semibold transition-all ${
                   selectedChild === child.name
-                    ? "bg-gradient-to-r from-orange-400 to-pink-500 text-white shadow-lg"
-                    : "bg-white text-gray-700 border-2 border-gray-200"
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "bg-card text-foreground border border-border hover:border-primary"
                 }`}
               >
                 <div className="text-sm">{child.name}</div>
-                <div className="text-xs opacity-75">Age {child.age}</div>
+                <div className="text-xs opacity-70">Age {child.age}</div>
               </button>
             ))}
           </div>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <div className="text-2xl mb-1">📚</div>
-            <div className="text-xs text-gray-600">Books Read</div>
-            <div className="text-xl font-bold text-gray-800">12</div>
+        <div className="grid grid-cols-3 gap-4 animate-slide-up">
+          <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
+            <BookOpen className="w-6 h-6 text-primary mb-2" />
+            <div className="text-xs text-gray-500 mb-1">Books Read</div>
+            <div className="text-2xl font-bold text-foreground">12</div>
           </div>
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <div className="text-2xl mb-1">⭐</div>
-            <div className="text-xs text-gray-600">Current Level</div>
-            <div className="text-xl font-bold text-gray-800">4.2</div>
+          <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
+            <TrendingUp className="w-6 h-6 text-secondary mb-2" />
+            <div className="text-xs text-gray-500 mb-1">Reading Level</div>
+            <div className="text-2xl font-bold text-foreground">4.2</div>
           </div>
-          <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <div className="text-2xl mb-1">🏆</div>
-            <div className="text-xs text-gray-600">Badges</div>
-            <div className="text-xl font-bold text-gray-800">7</div>
+          <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
+            <Award className="w-6 h-6 text-accent mb-2" />
+            <div className="text-xs text-gray-500 mb-1">Achievements</div>
+            <div className="text-2xl font-bold text-foreground">7</div>
           </div>
         </div>
 
         {/* Continue Reading */}
-        <div>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-bold text-gray-800">
-              Continue Reading
-            </h3>
-            <Link
-              to="/library"
-              className="text-orange-500 hover:text-orange-600 text-sm font-semibold"
-            >
-              View All
+        <div className="animate-slide-up">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="heading-md text-foreground">Continue Reading</h3>
+            <Link to="/library" className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
+              View All →
             </Link>
           </div>
           <div className="space-y-3">
-            {continueReading.map((book) => (
-              <div key={book.id} className="bg-white rounded-2xl p-4 shadow-sm">
+            {continueReading.map((book, idx) => (
+              <div key={book.id} style={{ animationDelay: `${idx * 100}ms` }} className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up">
                 <div className="flex items-start gap-4">
-                  <div className="text-5xl">{book.cover}</div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
+                    {book.icon}
+                  </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-800 text-sm">
-                      {book.title}
-                    </h4>
-                    <p className="text-xs text-gray-600 mb-2">{book.author}</p>
+                    <h4 className="font-semibold text-foreground text-sm">{book.title}</h4>
+                    <p className="text-xs text-gray-500 mb-2">{book.author}</p>
                     <div className="space-y-1">
-                      <div className="flex items-center justify-between text-xs text-gray-600">
+                      <div className="flex items-center justify-between text-xs text-gray-500">
                         <span>Progress</span>
-                        <span>{book.progress}%</span>
+                        <span className="font-semibold">{book.progress}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-orange-400 to-pink-500 h-2 rounded-full"
+                          className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-500"
                           style={{ width: `${book.progress}%` }}
                         />
                       </div>
@@ -202,47 +203,37 @@ export default function Dashboard() {
         </div>
 
         {/* Recommended Books */}
-        <div>
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-bold text-gray-800">
-              Recommended for Emma
-            </h3>
-            <Link
-              to="/search"
-              className="text-orange-500 hover:text-orange-600 text-sm font-semibold"
-            >
-              Browse
+        <div className="animate-slide-up">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="heading-md text-foreground">Recommended for {selectedChild}</h3>
+            <Link to="/search" className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
+              Browse All →
             </Link>
           </div>
           <div className="space-y-3">
-            {recommended.map((book) => (
+            {recommended.map((book, idx) => (
               <Link
                 key={book.id}
                 to={`/book/${book.id}`}
-                className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                style={{ animationDelay: `${idx * 100}ms` }}
+                className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-5xl">{book.cover}</div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
+                    {book.icon}
+                  </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-800 text-sm">
-                      {book.title}
-                    </h4>
-                    <p className="text-xs text-gray-600 mb-2">{book.author}</p>
+                    <h4 className="font-semibold text-foreground text-sm">{book.title}</h4>
+                    <p className="text-xs text-gray-500 mb-3">{book.author}</p>
                     <div className="flex items-center justify-between">
+                      <span className="badge-primary">Level {book.level}</span>
                       <div className="flex items-center gap-1">
-                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
-                          Level {book.level}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                        <span className="text-xs font-semibold text-gray-700">
-                          {book.rating}
-                        </span>
+                        <Star className="w-4 h-4 fill-accent text-accent" />
+                        <span className="text-xs font-semibold text-foreground">{book.rating}</span>
                       </div>
                     </div>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-gray-300 flex-shrink-0" />
                 </div>
               </Link>
             ))}
@@ -252,8 +243,9 @@ export default function Dashboard() {
         {/* CTA */}
         <Link
           to="/search"
-          className="block w-full py-4 px-6 bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold rounded-2xl text-center shadow-lg hover:shadow-xl transition-all"
+          className="flex items-center justify-center gap-2 w-full py-4 px-6 bg-primary text-primary-foreground font-semibold rounded-lg text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 animate-slide-up"
         >
+          <Play className="w-5 h-5" />
           Discover More Books
         </Link>
       </div>
