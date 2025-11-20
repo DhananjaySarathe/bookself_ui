@@ -119,31 +119,44 @@ export default function Progress() {
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="text-3xl mb-2">📚</div>
             <p className="text-xs text-gray-600 mb-1">Books Read</p>
-            <p className="text-2xl font-bold text-gray-800">{stats.booksRead}</p>
+            <p className="text-2xl font-bold text-gray-800">
+              {stats.booksRead}
+            </p>
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="text-3xl mb-2">📄</div>
             <p className="text-xs text-gray-600 mb-1">Total Pages</p>
-            <p className="text-2xl font-bold text-gray-800">{stats.pagesRead}</p>
+            <p className="text-2xl font-bold text-gray-800">
+              {stats.pagesRead}
+            </p>
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="text-3xl mb-2">⭐</div>
             <p className="text-xs text-gray-600 mb-1">Current Level</p>
-            <p className="text-2xl font-bold text-gray-800">{stats.currentLevel}</p>
+            <p className="text-2xl font-bold text-gray-800">
+              {stats.currentLevel}
+            </p>
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="text-3xl mb-2">🔥</div>
             <p className="text-xs text-gray-600 mb-1">Reading Streak</p>
-            <p className="text-2xl font-bold text-gray-800">{stats.streak} days</p>
+            <p className="text-2xl font-bold text-gray-800">
+              {stats.streak} days
+            </p>
           </div>
         </div>
 
         {/* Monthly Chart */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-6">Books Read This Year</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-6">
+            Books Read This Year
+          </h2>
           <div className="flex items-end justify-between h-48 gap-2">
             {monthlyData.map((data) => (
-              <div key={data.month} className="flex-1 flex flex-col items-center gap-2">
+              <div
+                key={data.month}
+                className="flex-1 flex flex-col items-center gap-2"
+              >
                 <div className="w-full flex items-end justify-center">
                   <div
                     className="w-full bg-gradient-to-t from-orange-400 to-pink-500 rounded-t-lg transition-all"
@@ -153,7 +166,9 @@ export default function Progress() {
                     }}
                   />
                 </div>
-                <p className="text-sm font-semibold text-gray-800">{data.month}</p>
+                <p className="text-sm font-semibold text-gray-800">
+                  {data.month}
+                </p>
                 <p className="text-xs text-gray-600">{data.books} books</p>
               </div>
             ))}
@@ -162,18 +177,27 @@ export default function Progress() {
 
         {/* Reading Level Progress */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-4">Reading Level Progress</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-4">
+            Reading Level Progress
+          </h2>
           <div className="space-y-4">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-gray-700">Current: 4.2</span>
+                <span className="text-sm font-semibold text-gray-700">
+                  Current: 4.2
+                </span>
                 <span className="text-sm text-gray-600">Target: 5.0</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4">
-                <div className="bg-gradient-to-r from-orange-400 to-pink-500 h-4 rounded-full" style={{ width: "84%" }} />
+                <div
+                  className="bg-gradient-to-r from-orange-400 to-pink-500 h-4 rounded-full"
+                  style={{ width: "84%" }}
+                />
               </div>
             </div>
-            <p className="text-xs text-gray-600">Keep reading to level up! Complete 2 more advanced books.</p>
+            <p className="text-xs text-gray-600">
+              Keep reading to level up! Complete 2 more advanced books.
+            </p>
           </div>
         </div>
 
@@ -189,21 +213,31 @@ export default function Progress() {
                 }`}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`text-4xl ${achievement.unlocked ? "" : "opacity-40"}`}>
+                  <div
+                    className={`text-4xl ${achievement.unlocked ? "" : "opacity-40"}`}
+                  >
                     {achievement.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className={`font-semibold ${achievement.unlocked ? "text-gray-800" : "text-gray-600"}`}>
+                    <h3
+                      className={`font-semibold ${achievement.unlocked ? "text-gray-800" : "text-gray-600"}`}
+                    >
                       {achievement.name}
                     </h3>
-                    <p className={`text-sm mb-2 ${achievement.unlocked ? "text-gray-600" : "text-gray-500"}`}>
+                    <p
+                      className={`text-sm mb-2 ${achievement.unlocked ? "text-gray-600" : "text-gray-500"}`}
+                    >
                       {achievement.description}
                     </p>
                     {achievement.unlocked && achievement.unlockedDate && (
-                      <p className="text-xs text-green-600 font-semibold">✓ Unlocked {achievement.unlockedDate}</p>
+                      <p className="text-xs text-green-600 font-semibold">
+                        ✓ Unlocked {achievement.unlockedDate}
+                      </p>
                     )}
                     {!achievement.unlocked && (
-                      <p className="text-xs text-gray-500">Locked - Keep reading to unlock!</p>
+                      <p className="text-xs text-gray-500">
+                        Locked - Keep reading to unlock!
+                      </p>
                     )}
                   </div>
                 </div>

@@ -1,4 +1,11 @@
-import { ArrowLeft, ChevronRight, Bell, Shield, LogOut, Plus } from "lucide-react";
+import {
+  ArrowLeft,
+  ChevronRight,
+  Bell,
+  Shield,
+  LogOut,
+  Plus,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -109,10 +116,15 @@ export default function Settings() {
           </div>
           <div className="space-y-3">
             {children.map((child) => (
-              <div key={child.id} className="bg-white rounded-2xl shadow-sm p-4">
+              <div
+                key={child.id}
+                className="bg-white rounded-2xl shadow-sm p-4"
+              >
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-semibold text-gray-800">{child.name}</h3>
+                    <h3 className="font-semibold text-gray-800">
+                      {child.name}
+                    </h3>
                     <p className="text-sm text-gray-600">
                       Age {child.age} • Grade {child.grade}
                     </p>
@@ -142,15 +154,17 @@ export default function Settings() {
           <div className="bg-white rounded-2xl shadow-sm divide-y divide-gray-200">
             <div className="p-4 flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-800">New Book Recommendations</p>
-                <p className="text-sm text-gray-600">Get notified about new book matches</p>
+                <p className="font-semibold text-gray-800">
+                  New Book Recommendations
+                </p>
+                <p className="text-sm text-gray-600">
+                  Get notified about new book matches
+                </p>
               </div>
               <button
                 onClick={() => toggleNotification("newBooks")}
                 className={`w-12 h-6 rounded-full transition-all ${
-                  notifications.newBooks
-                    ? "bg-orange-400"
-                    : "bg-gray-300"
+                  notifications.newBooks ? "bg-orange-400" : "bg-gray-300"
                 }`}
               >
                 <div
@@ -163,20 +177,24 @@ export default function Settings() {
 
             <div className="p-4 flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-800">Achievements Unlocked</p>
-                <p className="text-sm text-gray-600">Get notified when your child unlocks badges</p>
+                <p className="font-semibold text-gray-800">
+                  Achievements Unlocked
+                </p>
+                <p className="text-sm text-gray-600">
+                  Get notified when your child unlocks badges
+                </p>
               </div>
               <button
                 onClick={() => toggleNotification("achievements")}
                 className={`w-12 h-6 rounded-full transition-all ${
-                  notifications.achievements
-                    ? "bg-orange-400"
-                    : "bg-gray-300"
+                  notifications.achievements ? "bg-orange-400" : "bg-gray-300"
                 }`}
               >
                 <div
                   className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    notifications.achievements ? "translate-x-6" : "translate-x-0.5"
+                    notifications.achievements
+                      ? "translate-x-6"
+                      : "translate-x-0.5"
                   }`}
                 />
               </button>
@@ -185,7 +203,9 @@ export default function Settings() {
             <div className="p-4 flex items-center justify-between">
               <div>
                 <p className="font-semibold text-gray-800">Reading Reminders</p>
-                <p className="text-sm text-gray-600">Daily reading encouragement</p>
+                <p className="text-sm text-gray-600">
+                  Daily reading encouragement
+                </p>
               </div>
               <button
                 onClick={() => toggleNotification("readingReminders")}
@@ -197,7 +217,9 @@ export default function Settings() {
               >
                 <div
                   className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    notifications.readingReminders ? "translate-x-6" : "translate-x-0.5"
+                    notifications.readingReminders
+                      ? "translate-x-6"
+                      : "translate-x-0.5"
                   }`}
                 />
               </button>
@@ -206,19 +228,21 @@ export default function Settings() {
             <div className="p-4 flex items-center justify-between">
               <div>
                 <p className="font-semibold text-gray-800">Weekly Reports</p>
-                <p className="text-sm text-gray-600">Summary of reading progress every Sunday</p>
+                <p className="text-sm text-gray-600">
+                  Summary of reading progress every Sunday
+                </p>
               </div>
               <button
                 onClick={() => toggleNotification("weeklyReport")}
                 className={`w-12 h-6 rounded-full transition-all ${
-                  notifications.weeklyReport
-                    ? "bg-orange-400"
-                    : "bg-gray-300"
+                  notifications.weeklyReport ? "bg-orange-400" : "bg-gray-300"
                 }`}
               >
                 <div
                   className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    notifications.weeklyReport ? "translate-x-6" : "translate-x-0.5"
+                    notifications.weeklyReport
+                      ? "translate-x-6"
+                      : "translate-x-0.5"
                   }`}
                 />
               </button>
@@ -233,15 +257,21 @@ export default function Settings() {
           </h2>
           <div className="bg-white rounded-2xl shadow-sm divide-y divide-gray-200">
             <button className="w-full px-4 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
-              <span className="font-semibold text-gray-800">Privacy Policy</span>
+              <span className="font-semibold text-gray-800">
+                Privacy Policy
+              </span>
               <ChevronRight className="w-5 h-5 text-gray-400" />
             </button>
             <button className="w-full px-4 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
-              <span className="font-semibold text-gray-800">Terms of Service</span>
+              <span className="font-semibold text-gray-800">
+                Terms of Service
+              </span>
               <ChevronRight className="w-5 h-5 text-gray-400" />
             </button>
             <button className="w-full px-4 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
-              <span className="font-semibold text-gray-800">Change Password</span>
+              <span className="font-semibold text-gray-800">
+                Change Password
+              </span>
               <ChevronRight className="w-5 h-5 text-gray-400" />
             </button>
           </div>

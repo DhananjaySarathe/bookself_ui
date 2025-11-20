@@ -37,9 +37,27 @@ export default function BookDetails() {
   };
 
   const similarBooks: SimilarBook[] = [
-    { id: 2, title: "Wings of Fire", author: "Tui T. Sutherland", cover: "🐉", rating: 4.7 },
-    { id: 3, title: "The Hunger Games", author: "Suzanne Collins", cover: "🔥", rating: 4.6 },
-    { id: 4, title: "Rick Riordan's Kane Chronicles", author: "Rick Riordan", cover: "🏺", rating: 4.5 },
+    {
+      id: 2,
+      title: "Wings of Fire",
+      author: "Tui T. Sutherland",
+      cover: "🐉",
+      rating: 4.7,
+    },
+    {
+      id: 3,
+      title: "The Hunger Games",
+      author: "Suzanne Collins",
+      cover: "🔥",
+      rating: 4.6,
+    },
+    {
+      id: 4,
+      title: "Rick Riordan's Kane Chronicles",
+      author: "Rick Riordan",
+      cover: "🏺",
+      rating: 4.5,
+    },
   ];
 
   return (
@@ -63,7 +81,9 @@ export default function BookDetails() {
           <div className="flex gap-6 mb-6">
             <div className="text-7xl">{book.cover}</div>
             <div className="flex-1">
-              <h1 className="text-2xl font-bold text-gray-800 mb-1">{book.title}</h1>
+              <h1 className="text-2xl font-bold text-gray-800 mb-1">
+                {book.title}
+              </h1>
               <p className="text-gray-600 mb-3">{book.author}</p>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex items-center gap-1">
@@ -78,8 +98,12 @@ export default function BookDetails() {
                     />
                   ))}
                 </div>
-                <span className="font-semibold text-gray-700">{book.rating}</span>
-                <span className="text-sm text-gray-500">({book.reviewCount} reviews)</span>
+                <span className="font-semibold text-gray-700">
+                  {book.rating}
+                </span>
+                <span className="text-sm text-gray-500">
+                  ({book.reviewCount} reviews)
+                </span>
               </div>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
@@ -130,7 +154,9 @@ export default function BookDetails() {
                 : "bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50"
             }`}
           >
-            <Star className={`w-5 h-5 ${savedBookmark ? "fill-current" : ""}`} />
+            <Star
+              className={`w-5 h-5 ${savedBookmark ? "fill-current" : ""}`}
+            />
             {savedBookmark ? "Saved" : "Save"}
           </button>
         </div>
@@ -143,7 +169,9 @@ export default function BookDetails() {
 
         {/* Why Kids Love This */}
         <div className="bg-white rounded-2xl shadow-sm p-6">
-          <h2 className="text-lg font-bold text-gray-800 mb-4">Why Kids Love This</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-4">
+            Why Kids Love This
+          </h2>
           <div className="space-y-3">
             {book.highlights.map((highlight, index) => (
               <div key={index} className="flex items-start gap-3">
@@ -156,18 +184,31 @@ export default function BookDetails() {
 
         {/* Similar Books */}
         <div>
-          <h2 className="text-lg font-bold text-gray-800 mb-4">Similar Books</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-4">
+            Similar Books
+          </h2>
           <div className="space-y-3">
             {similarBooks.map((similarBook) => (
-              <div key={similarBook.id} className="bg-white rounded-2xl shadow-sm p-4">
+              <div
+                key={similarBook.id}
+                className="bg-white rounded-2xl shadow-sm p-4"
+              >
                 <div className="flex items-start gap-4">
-                  <div className="text-5xl flex-shrink-0">{similarBook.cover}</div>
+                  <div className="text-5xl flex-shrink-0">
+                    {similarBook.cover}
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-800">{similarBook.title}</h3>
-                    <p className="text-sm text-gray-600 mb-2">{similarBook.author}</p>
+                    <h3 className="font-semibold text-gray-800">
+                      {similarBook.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      {similarBook.author}
+                    </p>
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-semibold text-gray-700">{similarBook.rating}</span>
+                      <span className="text-sm font-semibold text-gray-700">
+                        {similarBook.rating}
+                      </span>
                     </div>
                   </div>
                 </div>

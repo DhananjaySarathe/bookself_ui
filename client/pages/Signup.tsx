@@ -60,7 +60,9 @@ export default function Signup() {
         <div className="w-full max-w-md">
           {/* Heading */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Create Account</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              Create Account
+            </h1>
             <p className="text-gray-600">Join Bookworm to get started</p>
           </div>
 
@@ -128,7 +130,9 @@ export default function Signup() {
                   required
                 />
               </div>
-              <p className="text-xs text-gray-500 mt-1">At least 6 characters</p>
+              <p className="text-xs text-gray-500 mt-1">
+                At least 6 characters
+              </p>
             </div>
 
             {/* Confirm Password field */}
@@ -152,9 +156,20 @@ export default function Signup() {
 
             {/* Terms checkbox */}
             <label className="flex items-start gap-2 text-sm text-gray-600">
-              <input type="checkbox" className="w-4 h-4 rounded mt-1" required />
+              <input
+                type="checkbox"
+                className="w-4 h-4 rounded mt-1"
+                required
+              />
               <span>
-                I agree to the <a href="#" className="text-orange-500 hover:text-orange-600">Terms of Service</a> and <a href="#" className="text-orange-500 hover:text-orange-600">Privacy Policy</a>
+                I agree to the{" "}
+                <a href="#" className="text-orange-500 hover:text-orange-600">
+                  Terms of Service
+                </a>{" "}
+                and{" "}
+                <a href="#" className="text-orange-500 hover:text-orange-600">
+                  Privacy Policy
+                </a>
               </span>
             </label>
 
@@ -178,7 +193,10 @@ export default function Signup() {
           {/* Login link */}
           <p className="text-center text-gray-600 mt-6">
             Already have an account?{" "}
-            <Link to="/login" className="text-orange-500 hover:text-orange-600 font-semibold">
+            <Link
+              to="/login"
+              className="text-orange-500 hover:text-orange-600 font-semibold"
+            >
               Sign in
             </Link>
           </p>

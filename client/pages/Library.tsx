@@ -141,7 +141,9 @@ export default function Library() {
                 )}
 
                 {activeTab === "completed" && book.completedDate && (
-                  <p className="text-xs text-gray-500">Finished: {book.completedDate}</p>
+                  <p className="text-xs text-gray-500">
+                    Finished: {book.completedDate}
+                  </p>
                 )}
               </div>
 
@@ -184,7 +186,9 @@ export default function Library() {
                   }`}
                 >
                   {tab.label}
-                  <span className="ml-2 text-xs font-bold opacity-75">({tab.count})</span>
+                  <span className="ml-2 text-xs font-bold opacity-75">
+                    ({tab.count})
+                  </span>
                 </button>
               ))}
             </div>
@@ -193,9 +197,7 @@ export default function Library() {
       </div>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-6 py-6">
-        {renderBooks()}
-      </div>
+      <div className="max-w-2xl mx-auto px-6 py-6">{renderBooks()}</div>
     </div>
   );
 }

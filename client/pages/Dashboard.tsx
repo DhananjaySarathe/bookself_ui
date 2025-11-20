@@ -162,8 +162,13 @@ export default function Dashboard() {
         {/* Continue Reading */}
         <div>
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-bold text-gray-800">Continue Reading</h3>
-            <Link to="/library" className="text-orange-500 hover:text-orange-600 text-sm font-semibold">
+            <h3 className="text-lg font-bold text-gray-800">
+              Continue Reading
+            </h3>
+            <Link
+              to="/library"
+              className="text-orange-500 hover:text-orange-600 text-sm font-semibold"
+            >
               View All
             </Link>
           </div>
@@ -173,7 +178,9 @@ export default function Dashboard() {
                 <div className="flex items-start gap-4">
                   <div className="text-5xl">{book.cover}</div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-800 text-sm">{book.title}</h4>
+                    <h4 className="font-semibold text-gray-800 text-sm">
+                      {book.title}
+                    </h4>
                     <p className="text-xs text-gray-600 mb-2">{book.author}</p>
                     <div className="space-y-1">
                       <div className="flex items-center justify-between text-xs text-gray-600">
@@ -197,18 +204,29 @@ export default function Dashboard() {
         {/* Recommended Books */}
         <div>
           <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-bold text-gray-800">Recommended for Emma</h3>
-            <Link to="/search" className="text-orange-500 hover:text-orange-600 text-sm font-semibold">
+            <h3 className="text-lg font-bold text-gray-800">
+              Recommended for Emma
+            </h3>
+            <Link
+              to="/search"
+              className="text-orange-500 hover:text-orange-600 text-sm font-semibold"
+            >
               Browse
             </Link>
           </div>
           <div className="space-y-3">
             {recommended.map((book) => (
-              <Link key={book.id} to={`/book/${book.id}`} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow">
+              <Link
+                key={book.id}
+                to={`/book/${book.id}`}
+                className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+              >
                 <div className="flex items-start gap-4">
                   <div className="text-5xl">{book.cover}</div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-800 text-sm">{book.title}</h4>
+                    <h4 className="font-semibold text-gray-800 text-sm">
+                      {book.title}
+                    </h4>
                     <p className="text-xs text-gray-600 mb-2">{book.author}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
@@ -218,7 +236,9 @@ export default function Dashboard() {
                       </div>
                       <div className="flex items-center gap-1">
                         <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                        <span className="text-xs font-semibold text-gray-700">{book.rating}</span>
+                        <span className="text-xs font-semibold text-gray-700">
+                          {book.rating}
+                        </span>
                       </div>
                     </div>
                   </div>

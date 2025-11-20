@@ -6,7 +6,10 @@ export default function Splash() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-amber-100 via-orange-50 to-pink-100 px-6">
       {/* Animated background decoration */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-bounce-gentle" />
-      <div className="absolute bottom-20 left-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-bounce-gentle" style={{ animationDelay: "0.2s" }} />
+      <div
+        className="absolute bottom-20 left-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-bounce-gentle"
+        style={{ animationDelay: "0.2s" }}
+      />
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-md animate-slide-up">
@@ -27,14 +30,17 @@ export default function Splash() {
 
         {/* Subtitle */}
         <p className="text-lg text-gray-600 mb-8">
-          Help your children discover amazing books and develop a love for reading
+          Help your children discover amazing books and develop a love for
+          reading
         </p>
 
         {/* Feature highlights */}
         <div className="space-y-3 mb-10">
           <div className="flex items-center justify-center gap-2 text-gray-700">
             <Sparkles className="w-5 h-5 text-purple-500" />
-            <span className="text-sm font-medium">Personalized recommendations</span>
+            <span className="text-sm font-medium">
+              Personalized recommendations
+            </span>
           </div>
           <div className="flex items-center justify-center gap-2 text-gray-700">
             <Sparkles className="w-5 h-5 text-pink-500" />

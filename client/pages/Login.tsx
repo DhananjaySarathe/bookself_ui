@@ -38,7 +38,9 @@ export default function Login() {
         <div className="w-full max-w-md">
           {/* Heading */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              Welcome Back
+            </h1>
             <p className="text-gray-600">Sign in to your Bookworm account</p>
           </div>
 
@@ -97,7 +99,10 @@ export default function Login() {
                 <input type="checkbox" className="w-4 h-4 rounded" />
                 <span className="text-gray-600">Remember me</span>
               </label>
-              <a href="#" className="text-orange-500 hover:text-orange-600 font-medium">
+              <a
+                href="#"
+                className="text-orange-500 hover:text-orange-600 font-medium"
+              >
                 Forgot password?
               </a>
             </div>
@@ -122,7 +127,10 @@ export default function Login() {
           {/* Signup link */}
           <p className="text-center text-gray-600 mt-6">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-orange-500 hover:text-orange-600 font-semibold">
+            <Link
+              to="/signup"
+              className="text-orange-500 hover:text-orange-600 font-semibold"
+            >
               Sign up
             </Link>
           </p>

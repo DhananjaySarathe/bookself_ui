@@ -23,7 +23,9 @@ export default function AddChild() {
     "Friendship",
   ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -56,14 +58,20 @@ export default function AddChild() {
 
       <div className="max-w-2xl mx-auto px-6 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Add Child Profile</h1>
-          <p className="text-gray-600">Tell us about your child to get personalized recommendations</p>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            Add Child Profile
+          </h1>
+          <p className="text-gray-600">
+            Tell us about your child to get personalized recommendations
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Child's Name</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              Child's Name
+            </label>
             <input
               type="text"
               name="name"
@@ -78,7 +86,9 @@ export default function AddChild() {
           {/* Age */}
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Age</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Age
+              </label>
               <select
                 name="age"
                 value={formData.age}
@@ -87,17 +97,21 @@ export default function AddChild() {
                 required
               >
                 <option value="">Select age</option>
-                {[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((age) => (
-                  <option key={age} value={age}>
-                    {age} years old
-                  </option>
-                ))}
+                {[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(
+                  (age) => (
+                    <option key={age} value={age}>
+                      {age} years old
+                    </option>
+                  ),
+                )}
               </select>
             </div>
 
             {/* Grade */}
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Grade</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Grade
+              </label>
               <select
                 name="grade"
                 value={formData.grade}
@@ -106,7 +120,18 @@ export default function AddChild() {
                 required
               >
                 <option value="">Select grade</option>
-                {["Pre-K", "K", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"].map((g) => (
+                {[
+                  "Pre-K",
+                  "K",
+                  "1st",
+                  "2nd",
+                  "3rd",
+                  "4th",
+                  "5th",
+                  "6th",
+                  "7th",
+                  "8th",
+                ].map((g) => (
                   <option key={g} value={g}>
                     {g}
                   </option>
@@ -117,13 +142,17 @@ export default function AddChild() {
 
           {/* Reading Level */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Reading Level</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
+              Reading Level
+            </label>
             <div className="grid grid-cols-3 gap-2">
               {["Beginner", "Intermediate", "Advanced"].map((level) => (
                 <button
                   key={level}
                   type="button"
-                  onClick={() => setFormData((prev) => ({ ...prev, readingLevel: level }))}
+                  onClick={() =>
+                    setFormData((prev) => ({ ...prev, readingLevel: level }))
+                  }
                   className={`py-2 px-3 rounded-lg font-medium text-sm transition-all ${
                     formData.readingLevel === level
                       ? "bg-gradient-to-r from-orange-400 to-pink-500 text-white"
@@ -138,7 +167,9 @@ export default function AddChild() {
 
           {/* Interests */}
           <div className="bg-white rounded-2xl p-4 shadow-sm">
-            <label className="block text-sm font-semibold text-gray-700 mb-3">Book Interests</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
+              Book Interests
+            </label>
             <div className="grid grid-cols-2 gap-2">
               {interests.map((interest) => (
                 <button
