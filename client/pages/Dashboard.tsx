@@ -1,4 +1,4 @@
-import { Menu, ChevronRight, Star, BookOpen } from "lucide-react";
+import { Menu, ChevronRight, Star, BookOpen, Flame, Award, TrendingUp, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -6,7 +6,7 @@ interface Book {
   id: number;
   title: string;
   author: string;
-  cover: string;
+  icon: string;
   progress: number;
 }
 
@@ -14,7 +14,7 @@ interface RecommendedBook {
   id: number;
   title: string;
   author: string;
-  cover: string;
+  icon: string;
   level: string;
   rating: number;
 }
@@ -33,14 +33,14 @@ export default function Dashboard() {
       id: 1,
       title: "The Lion, the Witch",
       author: "C.S. Lewis",
-      cover: "🦁",
+      icon: "📖",
       progress: 65,
     },
     {
       id: 2,
       title: "Charlotte's Web",
       author: "E.B. White",
-      cover: "🕷️",
+      icon: "📚",
       progress: 42,
     },
   ];
@@ -50,7 +50,7 @@ export default function Dashboard() {
       id: 1,
       title: "Percy Jackson",
       author: "Rick Riordan",
-      cover: "⚡",
+      icon: "🎯",
       level: "4-5",
       rating: 4.8,
     },
@@ -58,7 +58,7 @@ export default function Dashboard() {
       id: 2,
       title: "Wings of Fire",
       author: "Tui T. Sutherland",
-      cover: "🐉",
+      icon: "🌟",
       level: "3-4",
       rating: 4.7,
     },
@@ -66,7 +66,7 @@ export default function Dashboard() {
       id: 3,
       title: "Diary of a Wimpy Kid",
       author: "Jeff Kinney",
-      cover: "📔",
+      icon: "📖",
       level: "2-3",
       rating: 4.6,
     },
