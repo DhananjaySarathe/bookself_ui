@@ -83,7 +83,14 @@ export default function Search() {
     },
   ];
 
-  const genres = ["All", "Fantasy", "Adventure", "Comedy", "Friendship", "Mystery"];
+  const genres = [
+    "All",
+    "Fantasy",
+    "Adventure",
+    "Comedy",
+    "Friendship",
+    "Mystery",
+  ];
   const levels = ["All", "Beginner", "Intermediate", "Advanced"];
   const grades = ["All", "1st-2nd", "2nd-3rd", "3rd-4th", "4th-5th", "5th-6th"];
 
@@ -92,9 +99,12 @@ export default function Search() {
       searchQuery === "" ||
       book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       book.author.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesGenre = selectedGenre === "All" || book.genre === selectedGenre;
-    const matchesLevel = selectedLevel === "All" || book.level === selectedLevel;
-    const matchesGrade = selectedGrade === "All" || book.grade === selectedGrade;
+    const matchesGenre =
+      selectedGenre === "All" || book.genre === selectedGenre;
+    const matchesLevel =
+      selectedLevel === "All" || book.level === selectedLevel;
+    const matchesGrade =
+      selectedGrade === "All" || book.grade === selectedGrade;
 
     return matchesSearch && matchesGenre && matchesLevel && matchesGrade;
   });
@@ -131,7 +141,9 @@ export default function Search() {
         <div className="max-w-2xl mx-auto px-6 py-4 space-y-3">
           {/* Genre Filter */}
           <div>
-            <label className="block text-sm font-semibold text-foreground mb-2">Genre</label>
+            <label className="block text-sm font-semibold text-foreground mb-2">
+              Genre
+            </label>
             <div className="flex overflow-x-auto gap-2 pb-2">
               {genres.map((genre) => (
                 <button
@@ -152,7 +164,9 @@ export default function Search() {
           {/* Level and Grade */}
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold text-foreground mb-2">Reading Level</label>
+              <label className="block text-xs font-semibold text-foreground mb-2">
+                Reading Level
+              </label>
               <select
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value)}
@@ -166,7 +180,9 @@ export default function Search() {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold text-foreground mb-2">Grade</label>
+              <label className="block text-xs font-semibold text-foreground mb-2">
+                Grade
+              </label>
               <select
                 value={selectedGrade}
                 onChange={(e) => setSelectedGrade(e.target.value)}
@@ -187,7 +203,11 @@ export default function Search() {
       <div className="max-w-2xl mx-auto px-6 py-6">
         <div className="mb-4">
           <p className="text-sm text-gray-600">
-            Found <span className="font-semibold text-foreground">{filteredBooks.length}</span> books
+            Found{" "}
+            <span className="font-semibold text-foreground">
+              {filteredBooks.length}
+            </span>{" "}
+            books
           </p>
         </div>
 
@@ -204,7 +224,9 @@ export default function Search() {
                   {book.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-foreground">{book.title}</h4>
+                  <h4 className="font-semibold text-foreground">
+                    {book.title}
+                  </h4>
                   <p className="text-sm text-gray-500 mb-2">{book.author}</p>
                   <div className="flex flex-wrap gap-2 mb-2">
                     <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">
@@ -219,7 +241,9 @@ export default function Search() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 fill-accent text-accent" />
-                    <span className="text-sm font-semibold text-foreground">{book.rating}</span>
+                    <span className="text-sm font-semibold text-foreground">
+                      {book.rating}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -230,7 +254,9 @@ export default function Search() {
         {filteredBooks.length === 0 && (
           <div className="text-center py-12">
             <Filter className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600 mb-4">No books found matching your criteria</p>
+            <p className="text-gray-600 mb-4">
+              No books found matching your criteria
+            </p>
             <button
               onClick={() => {
                 setSearchQuery("");

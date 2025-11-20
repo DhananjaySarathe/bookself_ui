@@ -118,7 +118,11 @@ export default function Library() {
     return (
       <div className="space-y-3">
         {books.map((book, idx) => (
-          <div key={book.id} style={{ animationDelay: `${idx * 50}ms` }} className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up">
+          <div
+            key={book.id}
+            style={{ animationDelay: `${idx * 50}ms` }}
+            className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up"
+          >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center text-xl flex-shrink-0">
                 {book.icon}
@@ -143,7 +147,9 @@ export default function Library() {
                 )}
 
                 {activeTab === "completed" && book.completedDate && (
-                  <p className="text-xs text-gray-500 font-medium">✓ Finished {book.completedDate}</p>
+                  <p className="text-xs text-gray-500 font-medium">
+                    ✓ Finished {book.completedDate}
+                  </p>
                 )}
               </div>
 
@@ -186,7 +192,9 @@ export default function Library() {
                   }`}
                 >
                   {tab.label}
-                  <span className="ml-2 text-xs font-bold opacity-70">({tab.count})</span>
+                  <span className="ml-2 text-xs font-bold opacity-70">
+                    ({tab.count})
+                  </span>
                 </button>
               ))}
             </div>
@@ -195,9 +203,7 @@ export default function Library() {
       </div>
 
       {/* Content */}
-      <div className="max-w-2xl mx-auto px-6 py-6">
-        {renderBooks()}
-      </div>
+      <div className="max-w-2xl mx-auto px-6 py-6">{renderBooks()}</div>
     </div>
   );
 }

@@ -1,4 +1,12 @@
-import { Menu, ChevronRight, Star, BookOpen, TrendingUp, Award, Play } from "lucide-react";
+import {
+  Menu,
+  ChevronRight,
+  Star,
+  BookOpen,
+  TrendingUp,
+  Award,
+  Play,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -169,19 +177,28 @@ export default function Dashboard() {
         <div className="animate-slide-up">
           <div className="flex items-center justify-between mb-4">
             <h3 className="heading-md text-foreground">Continue Reading</h3>
-            <Link to="/library" className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
+            <Link
+              to="/library"
+              className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
+            >
               View All →
             </Link>
           </div>
           <div className="space-y-3">
             {continueReading.map((book, idx) => (
-              <div key={book.id} style={{ animationDelay: `${idx * 100}ms` }} className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up">
+              <div
+                key={book.id}
+                style={{ animationDelay: `${idx * 100}ms` }}
+                className="bg-card rounded-lg p-4 border border-border card-hover animate-slide-up"
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
                     {book.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-foreground text-sm">{book.title}</h4>
+                    <h4 className="font-semibold text-foreground text-sm">
+                      {book.title}
+                    </h4>
                     <p className="text-xs text-gray-500 mb-2">{book.author}</p>
                     <div className="space-y-1">
                       <div className="flex items-center justify-between text-xs text-gray-500">
@@ -205,8 +222,13 @@ export default function Dashboard() {
         {/* Recommended Books */}
         <div className="animate-slide-up">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="heading-md text-foreground">Recommended for {selectedChild}</h3>
-            <Link to="/search" className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
+            <h3 className="heading-md text-foreground">
+              Recommended for {selectedChild}
+            </h3>
+            <Link
+              to="/search"
+              className="text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
+            >
               Browse All →
             </Link>
           </div>
@@ -223,13 +245,17 @@ export default function Dashboard() {
                     {book.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-foreground text-sm">{book.title}</h4>
+                    <h4 className="font-semibold text-foreground text-sm">
+                      {book.title}
+                    </h4>
                     <p className="text-xs text-gray-500 mb-3">{book.author}</p>
                     <div className="flex items-center justify-between">
                       <span className="badge-primary">Level {book.level}</span>
                       <div className="flex items-center gap-1">
                         <Star className="w-4 h-4 fill-accent text-accent" />
-                        <span className="text-xs font-semibold text-foreground">{book.rating}</span>
+                        <span className="text-xs font-semibold text-foreground">
+                          {book.rating}
+                        </span>
                       </div>
                     </div>
                   </div>

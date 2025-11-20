@@ -1,4 +1,11 @@
-import { ArrowLeft, BookOpen, BarChart3, TrendingUp, Award, Lock } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  BarChart3,
+  TrendingUp,
+  Award,
+  Lock,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface Achievement {
@@ -119,17 +126,23 @@ export default function Progress() {
           <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
             <BookOpen className="w-6 h-6 text-primary mb-2" />
             <p className="text-xs text-gray-500 mb-1">Books Read</p>
-            <p className="text-3xl font-bold text-foreground">{stats.booksRead}</p>
+            <p className="text-3xl font-bold text-foreground">
+              {stats.booksRead}
+            </p>
           </div>
           <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
             <BarChart3 className="w-6 h-6 text-secondary mb-2" />
             <p className="text-xs text-gray-500 mb-1">Total Pages</p>
-            <p className="text-3xl font-bold text-foreground">{stats.pagesRead}</p>
+            <p className="text-3xl font-bold text-foreground">
+              {stats.pagesRead}
+            </p>
           </div>
           <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
             <TrendingUp className="w-6 h-6 text-accent mb-2" />
             <p className="text-xs text-gray-500 mb-1">Reading Level</p>
-            <p className="text-3xl font-bold text-foreground">{stats.currentLevel}</p>
+            <p className="text-3xl font-bold text-foreground">
+              {stats.currentLevel}
+            </p>
           </div>
           <div className="bg-card rounded-lg p-4 border border-border card-hover-subtle">
             <Award className="w-6 h-6 text-primary mb-2" />
@@ -140,10 +153,15 @@ export default function Progress() {
 
         {/* Monthly Chart */}
         <div className="bg-card rounded-lg p-6 border border-border animate-slide-up">
-          <h2 className="heading-md text-foreground mb-6">Books Read This Year</h2>
+          <h2 className="heading-md text-foreground mb-6">
+            Books Read This Year
+          </h2>
           <div className="flex items-end justify-between h-48 gap-2">
             {monthlyData.map((data) => (
-              <div key={data.month} className="flex-1 flex flex-col items-center gap-2">
+              <div
+                key={data.month}
+                className="flex-1 flex flex-col items-center gap-2"
+              >
                 <div className="w-full flex items-end justify-center">
                   <div
                     className="w-full bg-gradient-to-t from-primary to-secondary rounded-t-lg transition-all duration-500 hover:opacity-80"
@@ -153,7 +171,9 @@ export default function Progress() {
                     }}
                   />
                 </div>
-                <p className="text-sm font-semibold text-foreground">{data.month}</p>
+                <p className="text-sm font-semibold text-foreground">
+                  {data.month}
+                </p>
                 <p className="text-xs text-gray-500">{data.books} books</p>
               </div>
             ))}
@@ -162,18 +182,27 @@ export default function Progress() {
 
         {/* Reading Level Progress */}
         <div className="bg-card rounded-lg p-6 border border-border animate-slide-up">
-          <h2 className="heading-md text-foreground mb-4">Reading Level Progress</h2>
+          <h2 className="heading-md text-foreground mb-4">
+            Reading Level Progress
+          </h2>
           <div className="space-y-4">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-semibold text-foreground">Current: 4.2</span>
+                <span className="text-sm font-semibold text-foreground">
+                  Current: 4.2
+                </span>
                 <span className="text-sm text-gray-500">Target: 5.0</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
-                <div className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-500" style={{ width: "84%" }} />
+                <div
+                  className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-500"
+                  style={{ width: "84%" }}
+                />
               </div>
             </div>
-            <p className="text-xs text-gray-600">Keep reading to level up! Complete 2 more advanced books.</p>
+            <p className="text-xs text-gray-600">
+              Keep reading to level up! Complete 2 more advanced books.
+            </p>
           </div>
         </div>
 
@@ -192,18 +221,26 @@ export default function Progress() {
                 }`}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`text-3xl flex-shrink-0 ${achievement.unlocked ? "" : "grayscale opacity-40"}`}>
+                  <div
+                    className={`text-3xl flex-shrink-0 ${achievement.unlocked ? "" : "grayscale opacity-40"}`}
+                  >
                     {achievement.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className={`font-semibold ${achievement.unlocked ? "text-foreground" : "text-gray-600"}`}>
+                    <h3
+                      className={`font-semibold ${achievement.unlocked ? "text-foreground" : "text-gray-600"}`}
+                    >
                       {achievement.name}
                     </h3>
-                    <p className={`text-sm mb-2 ${achievement.unlocked ? "text-gray-500" : "text-gray-500"}`}>
+                    <p
+                      className={`text-sm mb-2 ${achievement.unlocked ? "text-gray-500" : "text-gray-500"}`}
+                    >
                       {achievement.description}
                     </p>
                     {achievement.unlocked && achievement.unlockedDate && (
-                      <p className="text-xs text-primary font-semibold">✓ Unlocked {achievement.unlockedDate}</p>
+                      <p className="text-xs text-primary font-semibold">
+                        ✓ Unlocked {achievement.unlockedDate}
+                      </p>
                     )}
                     {!achievement.unlocked && (
                       <p className="text-xs text-gray-500 flex items-center gap-1">
